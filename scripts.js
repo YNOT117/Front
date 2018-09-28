@@ -149,3 +149,48 @@ function PPT(){
     }
   }
 }
+
+
+// Fibonacci con 3 variables
+function Fibonacci(){
+  let Elemento = Number(prompt("¿Hasta que numero quieres llegar en la serie de fibonacci?"));
+
+  let f0 = 0;
+  let f1 = 1;
+  let f;
+
+  for (var n = 0; n <= Elemento; n++) {
+    if (n == 0) {
+      console.log("El elemto 1 de la serie es: 0");
+    }
+    if (n == 1) {
+      console.log("El elemto 2 de la serie es: 1");
+    }
+    if (n > 1) {
+      f = f0 + f1;
+      console.log("El elemto " + n + " de la serie es: " + f);
+      f0 = f1;
+      f1 = f;
+    }
+  }
+}
+
+
+// Fibonacci con array
+function Fibonacci2(){
+  let Elemento = Number(prompt("¿Hasta que numero quieres llegar en la serie de fibonacci?"));
+  let Fn = [];
+
+  for (var n = 0; n <= Elemento; n++) {
+    if (n == 0) {
+      Fn[n] = 0;
+    }
+    if (n == 1) {
+      Fn[n] = 1;
+    }
+    if (n > 1) {
+      Fn[n] = Fn[n-1] + Fn[n-2];
+    }
+      console.log("El elemento " + (n+1) + " de la sucecion es: " + Fn[n]);
+  }
+}
