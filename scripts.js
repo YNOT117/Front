@@ -5,18 +5,18 @@ function refrigerador(){
   // Sintaxis Si SiNO
   if(nombre == "Edgar"){
     if (contraRefri == "8669") {
-      console.log("Hola Edgar, refrigerador abierto");
+      alert("Hola Edgar, refrigerador abierto");
     }else {
-      console.log("Se te olvido la contraseña Edgarin!!!");
+      alert("Se te olvido la contraseña Edgarin!!!");
     }
   }else if (nombre == "Lariza") {
     if (contraRefri == "8669") {
-      console.log("Hola bonita <3 u <3, refrigerador abierto");
+      alert("Hola bonita <3 u <3, refrigerador abierto");
     }else {
-      console.log("Esa no es la contraseña bebé");
+      alert("Esa no es la contraseña bebé");
     }
   }else {
-    console.log("bye bye bye");
+    alert("bye bye bye");
   }
 }
 
@@ -192,4 +192,83 @@ function Fibonacci2(){
     }
       console.log("El elemento " + (n+1) + " de la sucecion es: " + Fn[n]);
   }
+}
+
+
+// Eliminar un numero repetido
+function NumerosRepetidos(){
+
+  let Serie = prompt("Ingresa una serie de numeros");
+  let NuevaSerie = [];
+
+  for (var k = 0; k < Serie.length; k++) {
+    NuevaSerie[k] = Serie[k];
+  }
+
+  for (var i = 0; i < Serie.length; i++) {
+    for (var j = i+1; j < Serie.length; j++) {
+      if (Serie[i] == Serie[j]) {
+        NuevaSerie.splice(j,1);
+      }
+    }
+  }
+
+  for (var k = 0; k < NuevaSerie.length; k++) {
+    console.log(NuevaSerie[k]);
+  }
+}
+
+function Encriptar(){
+  let Contra = prompt("Ingresa la contraseña a encriptar");
+  let Encriptada = [];
+  for (var i = 0; i < Contra.length; i++) {
+
+    if (Contra[i] == "a") {
+      Encriptada[i] = 4;
+    }else if (Contra[i] == "e") {
+      Encriptada[i] = 3;
+    }else if (Contra[i] == "i") {
+      Encriptada[i] = 1;
+    }else if (Contra[i] == "o") {
+      Encriptada[i] = 0;
+    }else if (Contra[i] == "t") {
+      Encriptada[i] = "7";
+    }else {
+      Encriptada[i] = Contra[i];
+    }
+  }
+  console.log("Comtraseña es " + Contra + " y encriptada es " + Encriptada.toString());
+}
+
+
+function Palindromo(){
+  let Pali = prompt("Introduce un texto");
+
+  let PaliSinEspacios = Pali.replace(/ /g,"");
+  //  Pali.replace(/ /g,""); // Remplaza todo los caracteres iguales a lo que este entre / / y coloca lo que este entre " "
+  let PaliSinEspaciosMinusculas = PaliSinEspacios.toLowerCase();
+  console.log(PaliSinEspaciosMinusculas);
+
+  let fraseVolteada = '';
+  for (var i = PaliSinEspaciosMinusculas.length-1; i >= 0 ; i--) {
+    fraseVolteada = fraseVolteada + PaliSinEspaciosMinusculas[i];
+  }
+
+  if (fraseVolteada == PaliSinEspaciosMinusculas) {
+    console.log("Si es un palindromo");
+  }else {
+    console.log("No es un palindromo");
+  }
+}
+
+
+function objToArray(objet){
+  let nuevoObjeto = {};
+  for (let i = 0; i < objet.length; i++) {
+    let node = objet[i];
+    let key = node.key;
+    let value = node.value;
+    nuevoObjeto[key] = value;
+  }
+  return nuevoObjeto;
 }
